@@ -1,0 +1,11 @@
+# pip was automatically installed for later version of python. This helped me to upgrade pip in powershell in windows(where I can play with python
+
+https://pip.pypa.io/en/latest/installing/#upgrading-pip
+
+# The following info help me to install numpy etc. using cmd.exe
+
+https://datanitro.com/blog/python_on_windows
+
+# For scipy, use exe file in
+
+https://sourceforge.net/projects/scipy/files/scipy/0.16.1/
