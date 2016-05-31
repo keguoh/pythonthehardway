@@ -3,15 +3,18 @@ def new(num_buckets = 256):
     aMap = []
     for i in range(0, num_buckets):
 	    aMap.append([])
+    # aMap is a list of 256 empty lists (buckets)
     return aMap
 	
 def hash_key(aMap, key):
     """Given a key this will create a number and then convert it to an index for the aMap's buckets."""
+    # return the index (as a interger from 0 to 255) for the given key
     return hash(key) % len(aMap)
 	
 def get_bucket(aMap, key):
     """Given a key, find the bucket where it would go."""
     bucket_id = hash_key(aMap, key)
+    # return the bucket (as a list) for the given key
     return aMap[bucket_id]
 	
 def get_slot(aMap, key, default = None):
@@ -19,11 +22,14 @@ def get_slot(aMap, key, default = None):
     Returns the index, key, and value of a slot found in a bucket.
     Returns -1, key, and default (None if not set) when not found.
     """
+    # this variable bucket is just a pointer which points to the actual bucket in aMap.
     bucket = get_bucket(aMap, key)
     for i, kv in enumerate(bucket):
-	    k, v = kv
-	    if key == k:
-		    return i, k, v
+        k, v = kv
+        if key == k:
+            # the existing (index, key, value)
+    	    return i, k, v
+    # key does not exist
     return -1, key, default
 	
 def get(aMap, key, default=None):
