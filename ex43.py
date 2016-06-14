@@ -51,7 +51,7 @@ class CentralCorridor(Scene):
             print "completely ruins his brand new costume his mother bought him, which"
             print "makes him fly into an insane rage and blast you repeatedly in the face until"
             print "you are dead.  Then he eats you."
-            #return 'death'
+            return 'death'
 
         elif action == "dodge!":
             print "Like a world class boxer you dodge, weave, slip and slide right"
