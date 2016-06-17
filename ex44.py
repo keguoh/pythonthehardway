@@ -16,7 +16,6 @@ print "\n"
 
 
 
-
 class Parent(object):
 
     def override(self):
@@ -52,4 +51,40 @@ dad = Parent()
 son = Child()
 
 dad.altered()
+son.altered()
+
+print '\n'
+
+
+
+class Other(object):
+
+    def override(self):
+        print "OTHER override()"
+
+    def implicit(self):
+        print "OTHER implicit()"
+
+    def altered(self):
+        print "OTHER altered()"
+
+class Child(object):
+
+    def __init__(self):
+        self.other = Other()
+
+    def implicit(self):
+        self.other.implicit()
+
+    def override(self):
+        print "Child override()"
+
+    def altered(self):
+        print "Child, before Other altered"
+        self.other.altered()
+        print "Child, after Other altered"
+
+son = Child()
+son.implicit()
+son.override()
 son.altered()
